@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Pizza Delivery Order</title>
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom Jumbotron-narrow styles for this template -->
+	<link href="css/jumbotron.css" rel="stylesheet">
+	<!--Pizza company styles-->
+	<link href="css/styles.css" rel="stylesheet">
+	<!-- Bootstrap.min.js -->
+	<link href="js/bootstrap.min.js">
+	<!--
+	<script src="js/script.js">
+	</script>
+-->
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="header clearfix"></div>
+		<nav>
+			<img id="logo" src="images/MylocalPizzaGuy_medium.gif" />
+		</nav>
+		<div class="jumbotron">
+			<h1>Pizza Order Form</h1>
+			<img id="background" src="images/background_image.jpg">
+		</div>
+		<div class=" row marketing">
+			<h4>Let's start by getting your delivery info:</h4>
+			<!--   Beginning of the order form   -->
+			<form id="ordering" class="form-horizontal" action="report.html" method="post">
+				<div class="form-group">
+					<label for="name" class="col-sm-2 control-label">Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="name">
+					</div>
+				</div>
+
+				<!--   Beginning of the select grouping     -->
+				<div class="form-group" id="building_type">
+					<label for="building_type" class="col-sm-3 control-label">Building Type</label>
+					<select class="col-sm-8 control-label">
+						<option id="house">House</option>
+						<option id="apt">Apartment</option>
+						<option id="bus">Business</option>
+						<option id="camp">Campus</option>
+						<option id="hotel">Hotel</option>
+						<option id="dorm">Dorm</option>
+						<option id="other">Other</option>
+					</select>
+				</div>
+				<!--Other Options-->
+				<div>
+
+
+				</div>
+
+
+				<!--  Continuation of order form  -->
+				<div class="form-group" id="street">
+					<label for="street" class="col-sm-2 control-label">Address</label>
+					<div class="col-sm-10">
+						<input type="street" class="form-control" id="street">
+					</div>
+				</div>
+				<div class="form-group" id="apt">
+					<label for="apt" class="col-sm-2 control-label">Apt/Office#</label>
+					<div class="col-sm-10">
+						<input type="apt" class="form-control" id="apt">
+					</div>
+				</div>
+				<div class="form-group" id="city">
+					<label for="city" class="col-sm-2 control-label">City</label>
+					<div class="col-sm-10">
+						<input type="city" class="form-control" id="city">
+					</div>
+				</div>
+				<div class="form-group" id="state">
+					<label for="state" class="col-sm-2 control-label">State</label>
+					<div class="col-sm-10">
+						<input type="state" onkeyup="limitLength(this,2)" class="form-control" id="state">
+					</div>
+				</div>
+				<div class="form-group" id="zip">
+					<label for="zip" class="col-sm-2 control-label">Zip Code</label>
+					<div class="col-sm-10">
+						<input type="zip" class="form-control" id="zip">
+					</div>
+				</div>
+				<div class="form-group" id="phone">
+					<label for="phone" class="col-sm-2 control-label">Phone</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="phone">
+					</div>
+				</div>
+				<div class="form-group" id="email">
+					<label for="email" class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="email">
+					</div>
+				</div>
+				<!--  End of Order Form     -->
+
+
+				<!-- Begin dough type    -->
+
+				<h4>Dough options:</h4>
+				<div class="radio" id="dough">
+					<label>
+						<input type="radio" name="dough" id="hand_tossed" value="option1"> Hand Tossed
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="dough" id="thin_crust" value="option2"> Thin Crust
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="dough" id="new_york" value="option3"> New York Style
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="dough" id="gluten_free" value="option4"> Gluten Free
+					</label>
+				</div>
+				<!--End dough selections-->
+
+				<!-- Drop Downs for Size selections -->
+				<div class="form-group" id="size">
+					<select class="col-sm-8 control-label">
+
+					</select>
+				</div>
+
+				<!--End Drop down for Size -->
+
+
+				<!--begin cheese selection -->
+				<h4>Cheese Options:</h4>
+				<div class="form-group" id="addcheese">
+					<label for="cheese" class="col-sm-3 control-label">Cheese Styling</label>
+					<select class="col-sm-8 control-label" id="cheese">
+						<option id="light">Light: no charge</option>
+						<option id="normal">Normal: no charge</option>
+						<option id="extra">Extra: + $2.99</option>
+						<option id="double">Double: = $3.99</option>
+					</select>
+				</div>
+				<!--end cheese selection-->
+
+
+				<!--Begin sauce selection-->
+				<h4>Sauce Options:</h4>
+				<div class="form-group" id="addsauce">
+					<label for="sauce" class="col-sm-3 control-label">Sauce Amount</label>
+					<select class="col-sm-8 control-label">
+						<option id="regular">Regular Tomato: no charge</option>
+						<option id="hearty">Hearty Tomato: + $0.99</option>
+						<option id="bbq">BBQ Sauce: = $1.99</option>
+					</select>
+				</div>
+				<!--  end sauce selection  -->
+
+
+				<!--topping selections-->
+				<h4>Extras - $0.99 each</h4>
+				<div class="col-md-10" id="addtoppings">
+					<label class="checkbox-inline" id="toppings">
+						<input type="checkbox" id="pepperoni" value="option1"> Pepperoni
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="sausage" value="option2"> Sausage
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="ham" value="option3"> Ham
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="bacon" value="option3"> Bacon
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="salami" value="option3"> Salami
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="peppers" value="option3"> Peppers
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="olives" value="option3"> Olives
+					</label>
+					<br>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="jalapenos" value="option3"> Jalapenos
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="mushrooms" value="option3"> Mushrooms
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="pineapple" value="option3"> Pinapple
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="onions" value="option3"> Onions
+					</label>
+				</div>
+
+
+				<div class="col-md-12">
+					<hr /> </div>
+
+				<!-- Button to confirm ordering -->
+				<button class="btn btn-danger" id="orderBtn" type="submit">Finished Building Pizza? </button>
+				<!--End of order form-->
+			</form>
+			<div class="col-md-12">
+				<hr /> </div>
+			<!--Begin Billing form-->
+
+			<div class="col-md-10" id="delivery">
+				<label class="checkbox-inline" id="same">
+					<input type="checkbox" id="sameAs" value="option1"> Same as delivery information
+				</label>
+				<form id="billing" class="form-horizontal">
+					<div class="form-group">
+						<label for="name" class="col-sm-2 control-label">Name</label>
+						<div class="col-sm-10">
+							<input type="name" class="form-control" id="name">
+						</div>
+					</div>
+					<!--   Beginning of the select grouping     -->
+
+					<div class="form-group">
+						<label for="building_type" class="col-sm-3 control-label">Building Type</label>
+						<select class="col-sm-8 control-label">
+							<option id="house">House</option>
+							<option id="apt">Apartment</option>
+							<option id="bus">Business</option>
+							<option id="camp">Campus</option>
+							<option id="hotel">Hotel</option>
+							<option id="dorm">Dorm</option>
+							<option id="other">Other</option>
+						</select>
+					</div>
+					<!--  Continuation of order form  -->
+					<div class="form-group">
+						<label for="street" class="col-sm-2 control-label">Address</label>
+						<div class="col-sm-10">
+							<input type="street" class="form-control" id="street">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="apt" class="col-sm-2 control-label">Apt/Office#</label>
+						<div class="col-sm-10">
+							<input type="apt" class="form-control" id="apt">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="city" class="col-sm-2 control-label">City</label>
+						<div class="col-sm-10">
+							<input type="city" class="form-control" id="city">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="state" class="col-sm-2 control-label">State</label>
+						<div class="col-sm-10">
+							<input type="state" class="form-control" id="state">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="zip" class="col-sm-2 control-label">Zip Code</label>
+						<div class="col-sm-10">
+							<input type="zip" class="form-control" id="zip">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="phone" class="col-sm-2 control-label">Phone</label>
+						<div class="col-sm-10">
+							<input type="tphone" class="form-control" id="phone">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-10">
+							<input type="email" class="form-control" id="email">
+						</div>
+					</div>
+
+
+					<!--New section of form for credit cards -->
+					<div class="form-group" id="cardName">
+						<label for="ccname" class="col-sm-2 control-label">Name on card</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="ccname">
+						</div>
+					</div>
+					<div class="form-group" id="cardNum">
+						<label for="ccard" class="col-sm-2 control-label">Card number</label>
+						<div class="col-sm-10">
+							<input type="ccard" class="form-control" id="ccard">
+						</div>
+					</div>
+					<div class="form-group" id="ccmonth">
+						<label for="ccmonth" class="col-sm-3 control-label">Expiration</label>
+						<select class="col-md-2 control-label" id="ccmonth">
+							<option id="01">01</option>
+							<option id="02">02</option>
+							<option id="03">03</option>
+							<option id="04">04</option>
+							<option id="05">05</option>
+							<option id="06">06</option>
+							<option id="07">07</option>
+							<option id="08">08</option>
+							<option id="09">09</option>
+							<option id="10">10</option>
+							<option id="11">11</option>
+							<option id="12">12</option>
+						</select>
+						<select class="col-md-2 control-label" id="ccyear">
+							<option id="15">15</option>
+							<option id="16">16</option>
+							<option id="17">17</option>
+							<option id="18">18</option>
+							<option id="19">19</option>
+							<option id="20">20</option>
+						</select>
+					</div>
+					<div class="form-group" id="CVC">
+						<label for="cvc" class="col-sm-2 control-label">CVC code</label>
+						<div class="col-sm-10">
+							<input type="email" class="form-control" id="cvc">
+						</div>
+					</div>
+
+
+
+				</form>
+
+				<!--begin footer-->
+				<footer>
+					<h5>copyright 2015 FEWD Pizza - the best pizza in town! </h5></footer>
+			</div>
+		</div>
+	</div>
+	<script src="js/script.js">
+	</script>
+</body>
+
+</html>

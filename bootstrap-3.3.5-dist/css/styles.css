@@ -1,0 +1,27 @@
+#background { 
+    background-image:images/background_image.jpg;
+    width:70%;
+    height: auto;
+    background-repeat: no-repeat;
+}
+
+#logo{
+    background-image: images/MylocalPizzaGuy_medium.gif
+    background-repeat: no-repeat;
+    float: left;
+    width:104px;
+    height: auto;
+    margin-left: -4%;
+}
+
+#label{
+     width:46%;   
+    height:auto;
+    float: left;
+}
+
+#delivery_address{
+    width:46%;
+    height: auto;
+    float: left;
+}
